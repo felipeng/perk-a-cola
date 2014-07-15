@@ -4,7 +4,7 @@ Real Perk-A-Cola Bottles LED
 Perk-A-Cola are a feature that can be found in zombies maps of Call Of Duty game.
 Each drink gives the player a perk to help them survive and fend off the zombie hordes.
 
-More info about: {Perk-A-Cola}[http://callofduty.wikia.com/wiki/Perk-a-Cola]
+More info about: [Perk-A-Cola](http://callofduty.wikia.com/wiki/Perk-a-Cola)
 
 ABOUT
 -----
