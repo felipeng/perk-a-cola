@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Perk-A-Cola Led Bottles using RaspBerry Pi - 2014
-# Create by Felipe Nogaroto Gonzalez <http://felipe.bunghole.com.br>
+# Real Perk-A-Cola Bottles LED
+# Created by Felipe Nogaroto Gonzalez <http://felipe.bunghole.com.br>
 # License: MIT (see LICENSE file)
 
 echo -e "Content-Type: text/html\r\n"
@@ -59,7 +59,7 @@ echo "
     	    <img class='perk gray' onclick='player(this);' id='5'  src='imgs/mule_kick.png' alt='Mule Kick'>
     	    <img class='perk gray' onclick='player(this);' id='6'  src='imgs/quick_revive.png' alt='Quick Revive'>
 	    <img class='perk gray' onclick='player(this);' id='7'  src='imgs/sleight_of_hand.png' alt='Sleight Of Hand'>
-	    <img class='perk gray' onclick='player(this);' id='8'  src='imgs/stamina_up.png' alt='Stamin-Up'>
+	    <img class='perk gray' onclick='player(this);' id='8'  src='imgs/stamin_up.png' alt='Stamin-Up'>
 	    <img class='perk gray' onclick='player(this);' id='9'  src='imgs/whos_who.png' alt='Who's Who'>
 	    <img class='perk gray' onclick='player(this);' id='10' src='imgs/tombstone.png' alt='Tombstone'>
 	    <img class='perk gray' onclick='player(this);' id='11' src='imgs/vulture_aid.png' alt='Vulture Aid Elixir'>

@@ -6,7 +6,7 @@ Each drink gives the player a perk to help them survive and fend off the zombie 
 
 More info about: [Perk-A-Cola](http://callofduty.wikia.com/wiki/Perk-a-Cola)
 
-ABOUT
+About
 -----
 
 This is my own version of Perk-A-Cola in real world with a plus,
@@ -19,11 +19,30 @@ The same code can be modified and used to communicate with microcontroller, like
 
 More info can be found on my personal blog: http://felipe.bunghole.com.br
 
+Installation
+------------
+
+
+
+
+Usage
+-----
+
+License
+-------
+
+See LICENSE file
+
+Author
+------
+
+The code was written by Felipe Nogaroto Gonzalez
+Personal blog: http://felipe.bunghole.com.br
+
 TODO
 ----
 
-* update README
-* create INSTALL file
+* update Installation section
 * index.cgi - set pins mode at first access
 * index.cgi - add teddy bear perk
 * index.cgi - add pack-a-punch
