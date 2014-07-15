@@ -1,11 +1,13 @@
-= CoD Zombies - Real Perk-A-Cola Bottles LED
+Real Perk-A-Cola Bottles LED
+==========================================
 
 Perk-A-Cola are a feature that can be found in zombies maps of Call Of Duty game.
 Each drink gives the player a perk to help them survive and fend off the zombie hordes.
 
 More info about: {Perk-A-Cola}[http://callofduty.wikia.com/wiki/Perk-a-Cola]
 
-== ABOUT
+ABOUT
+-----
 
 This is my own version of Perk-A-Cola in real world with a plus,
 you can turn on/off the bottle and play/stop the Perk-A-Cola song through
@@ -17,7 +19,8 @@ The same code can be modified and used to communicate with microcontroller, like
 
 More info can be found on my personal blog: http://felipe.bunghole.com.br
 
-= TODO
+TODO
+----
 
 * update README
 * create INSTALL file
