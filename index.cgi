@@ -10,12 +10,14 @@ echo -e 'Content-Type: text/html\r\n'
 PIN='${QUERY_STRING/=*}'
 VALUE='${QUERY_STRING/*=}'
 
+VALUE=0
+
 if [ $VALUE == 0 -o $VALUE == 1 ]; then
   echo 'gpio write $PIN $VALUE' >> /tmp/teste.log
   #gpio write $PIN $VALUE
 fi
 
-echo '
+echo "
 <html>
   <head>
 	   <!-- iPhone start -->
