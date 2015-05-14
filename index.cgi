@@ -4,21 +4,18 @@
 # Created by Felipe Nogaroto Gonzalez
 # License: MIT
 
-echo -e "Content-Type: text/html\r\n"
+echo -e 'Content-Type: text/html\r\n'
 
-PIN=${QUERY_STRING/=*}
-VALUE=${QUERY_STRING/*=}
-
-#if [ $PIN == "99" ]; then
-#    while true; do for i in 1 15 11 10 6 16 5 4; do gpio write $i 1; sleep 0.05; done; for i in 1 15 11 10 6 16 5 4; do gpio write $i 0; sleep 0.05 ; done; done
-#fi
+# Parser pin and value
+PIN='${QUERY_STRING/=*}'
+VALUE='${QUERY_STRING/*=}'
 
 if [ $VALUE == 0 -o $VALUE == 1 ]; then
-  echo "gpio write $PIN $VALUE" >> /tmp/teste.log
+  echo 'gpio write $PIN $VALUE' >> /tmp/teste.log
   #gpio write $PIN $VALUE
 fi
 
-echo "
+echo '
 <html>
   <head>
 	   <!-- iPhone start -->
@@ -68,7 +65,7 @@ echo "
     	    <img class='perk gray' onclick='player(this);' id='16' src='imgs/quick_revive.png'    alt='Quick Revive'>
 	        <img class='perk gray' onclick='player(this);' id='5'  src='imgs/sleight_of_hand.png' alt='Sleight Of Hand'>
 	        <img class='perk gray' onclick='player(this);' id='4'  src='imgs/stamin_up.png'       alt='Stamin-Up'>
-	        <img class='perk gray' onclick='player(this);' id='9'  src='imgs/whos_who.png'        alt='Who's Who'>
+	        <img class='perk gray' onclick='player(this);' id='9'  src='imgs/whos_who.png'        alt='Whos Who'>
 	        <img class='perk gray' onclick='player(this);' id='10' src='imgs/tombstone.png'       alt='Tombstone'>
 	        <img class='perk gray' onclick='player(this);' id='11' src='imgs/vulture_aid.png'     alt='Vulture Aid Elixir'>
 	        <img class='perk gray' onclick='player(this);' id='12' src='imgs/electric_cherry.png' alt='Electric Cherry'>
