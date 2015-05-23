@@ -4,13 +4,38 @@
 # Created by Felipe Nogaroto Gonzalez
 # License: MIT
 
+# Verificar se o comando gpio existe
+
+no_gpio(){
+  echo -e "Content-Type: text/html\r\n
+
+  <html>
+    <head>
+    </head>
+    <body>
+      gpio not found
+    </body>
+  </html>
+  "
+  exit
+}
+
+GPIO=$(which echasdao || echo o no_gpio)
+exit
+
+# Inicializa todos os pinos como OUT e como 0
+for pin in $(seq 0 12); do
+  echo gpio mode $pin out
+  echo gpio write $pin 0
+done
+
+
+
 echo -e 'Content-Type: text/html\r\n'
 
 # Parser pin and value
 PIN='${QUERY_STRING/=*}'
 VALUE='${QUERY_STRING/*=}'
-
-VALUE=0
 
 if [ $VALUE == 0 -o $VALUE == 1 ]; then
   echo 'gpio write $PIN $VALUE' >> /tmp/teste.log
@@ -72,18 +97,18 @@ echo "
 	        <img class='perk gray' onclick='player(this);' id='11' src='imgs/vulture_aid.png'     alt='Vulture Aid Elixir'>
 	        <img class='perk gray' onclick='player(this);' id='12' src='imgs/electric_cherry.png' alt='Electric Cherry'>
 	        <img class='perk gray' onclick='player(this);' id='99' src='imgs/pack_a_punch.png'    alt='Pack A Punch'>
-          <audio id='music-1'>  type='audio/mpeg' <source src='songs/deadshot.mp3'></audio>
-          <audio id='music-15'> type='audio/mpeg' <source src='songs/double_tap.mp3'></audio>
-          <audio id='music-11'> type='audio/mpeg' <source src='songs/phd_flooper.mp3'></audio>
-          <audio id='music-10'> type='audio/mpeg' <source src='songs/juggernaut.mp3'></audio>
-          <audio id='music-6'>  type='audio/mpeg' <source src='songs/mule_kick.mp3'></audio>
-	        <audio id='music-16'> type='audio/mpeg' <source src='songs/quick_revive.mp3'></audio>
-	        <audio id='music-5'>  type='audio/mpeg' <source src='songs/sleight_of_hand.mp3'></audio>
-	        <audio id='music-4'>  type='audio/mpeg' <source src='songs/stamin_up.mp3'></audio>
-	        <audio id='music-9'>  type='audio/mpeg' <source src='songs/whos_who.mp3'></audio>
-  	      <audio id='music-10'> type='audio/mpeg' <source src='songs/tombstone.mp3'></audio>
-  	      <audio id='music-11'> type='audio/mpeg' <source src='songs/vulture_aid.mp3'></audio>
-	        <audio id='music-12'> type='audio/mpeg' <source src='songs/electric_cherry.mp3'></audio>
+          <audio id='music-0'>  type='audio/mpeg' <source src='songs/deadshot.mp3'></audio>
+          <audio id='music-1'> type='audio/mpeg' <source src='songs/double_tap.mp3'></audio>
+          <audio id='music-2'> type='audio/mpeg' <source src='songs/phd_flooper.mp3'></audio>
+          <audio id='music-3'> type='audio/mpeg' <source src='songs/juggernaut.mp3'></audio>
+          <audio id='music-4'>  type='audio/mpeg' <source src='songs/mule_kick.mp3'></audio>
+	        <audio id='music-5'> type='audio/mpeg' <source src='songs/quick_revive.mp3'></audio>
+	        <audio id='music-6'>  type='audio/mpeg' <source src='songs/sleight_of_hand.mp3'></audio>
+	        <audio id='music-7'>  type='audio/mpeg' <source src='songs/stamin_up.mp3'></audio>
+	        <audio id='music-8'>  type='audio/mpeg' <source src='songs/whos_who.mp3'></audio>
+  	      <audio id='music-9'> type='audio/mpeg' <source src='songs/tombstone.mp3'></audio>
+  	      <audio id='music-10'> type='audio/mpeg' <source src='songs/vulture_aid.mp3'></audio>
+	        <audio id='music-11'> type='audio/mpeg' <source src='songs/electric_cherry.mp3'></audio>
 	        <audio id='music-99'> type='audio/mpeg' <source src='songs/pack_a_punch.mp3'></audio>
         </form>
     </body>
