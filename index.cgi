@@ -21,7 +21,6 @@ no_gpio(){
 }
 
 GPIO=$(which echo || echo o no_gpio)
-exit
 
 # Inicializa todos os pinos como OUT e como 0
 for pin in $(seq 0 12); do
