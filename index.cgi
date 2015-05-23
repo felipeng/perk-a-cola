@@ -20,7 +20,7 @@ no_gpio(){
   exit
 }
 
-GPIO=$(which echasdao || echo o no_gpio)
+GPIO=$(which echo || echo o no_gpio)
 exit
 
 # Inicializa todos os pinos como OUT e como 0
