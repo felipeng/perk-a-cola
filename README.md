@@ -1,14 +1,12 @@
-Real Perk-A-Cola Bottles LED
-============================
+# Real Perk-A-Cola Bottles
 
-Perk-A-Cola are a feature that can be found in zombies maps of Call Of Duty game.
-Each drink gives the player a perk to help them survive and fend off the zombie
-hordes.
+[Perk-A-Cola](http://callofduty.wikia.com/wiki/Perk-a-Cola) are a feature that 
+can be found in zombies maps of Call Of Duty game. Each drink gives the player 
+a perk to help them survive and fend off the zombie hordes.
 
-More info about: [Perk-A-Cola](http://callofduty.wikia.com/wiki/Perk-a-Cola)
+More info about this project: [Real Perk-A-Cola Bottles](http://felipeng.net/blog/projetos/real-perk-a-cola-bottles)
 
-About
------
+## About
 
 This is my own version of Perk-A-Cola in real world with a plus, you can turn
 on/off the bottle and play/stop the Perk-A-Cola song through the web interface
@@ -19,20 +17,16 @@ The main file is index.cgi which contains: HTML5 + CSS + JavaScript + GPIO
 The same code can be modified and used to communicate with microcontroller,
 like [Arduino](http://www.arduino.cc)
 
-Installation
-------------
+## Installation
 
 1. XXX
 
-Usage
------
+## Usage
 
-License
--------
+# License
 
 See LICENSE file
 
-Author
-------
+# Author
 
-The code was written by Felipe Nogaroto Gonzalez <felipeng84 @ gmail . com>
+Felipe Nogaroto Gonzalez - < felipeng84 @ gmail . com >
