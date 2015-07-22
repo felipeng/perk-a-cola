@@ -27,9 +27,9 @@ GPIO=$(which gpio 2>/dev/null)
 
 
 # Inicializa todos os pinos como OUT e como 0
-#for pin in $(seq 0 12); do
-#    gpio mode $pin out 1>/dev/null 2>/dev/null
-#    gpio write $pin 0 1>/dev/null 2>/dev/null
+#for pin in $(seq 0 26); do
+#    gpio -1 mode $pin out 1>/dev/null 2>/dev/null
+#    gpio -1 write $pin 0 1>/dev/null 2>/dev/null
 # done
 
 echo -e 'Content-Type: text/html\r\n'
@@ -39,8 +39,8 @@ PIN="${QUERY_STRING/=*}"
 VALUE="${QUERY_STRING/*=}"
 
 if [ $VALUE == 0 -o $VALUE == 1 ]; then
-   echo "gpio write $PIN $VALUE" >> teste.log
-   gpio write $PIN $VALUE
+   echo "gpio -1 write $PIN $VALUE" >> teste.log
+#   gpio write $PIN $VALUE
 fi
 
 echo "
@@ -68,7 +68,7 @@ echo "
     	}
 
     	function player(perk) {
-    	   var music = document.getElementById('music-' + perk.id);
+    	   var music = document.getElementById(perk.alt);
     	   if (music.paused == true){
     		     music.play();
     		     perk.className = 'perk';
@@ -85,32 +85,32 @@ echo "
     <body>
         <form action='index.cgi' method='get'>
           <img src='imgs/cod_zombies.png'>
-          <img class='perk gray' onclick='player(this);' id='5'  src='imgs/deadshot.png'        alt='Deadshot Daiquiri'>
-          <img class='perk gray' onclick='player(this);' id='13' src='imgs/double_tap.png'      alt='Double Tap Root Beer'>
-          <img class='perk gray' onclick='player(this);' id='16' src='imgs/phd_flooper.png'     alt='PhD Flooper'>
-          <img class='perk gray' onclick='player(this);' id='6' src='imgs/juggernaut.png'      alt='Juggernaut'>
-          <img class='perk gray' onclick='player(this);' id='11'  src='imgs/mule_kick.png'       alt='Mule Kick'>
-          <img class='perk gray' onclick='player(this);' id='10' src='imgs/quick_revive.png'    alt='Quick Revive'>
-          <img class='perk gray' onclick='player(this);' id='1'  src='imgs/sleight_of_hand.png' alt='Sleight Of Hand'>
-          <img class='perk gray' onclick='player(this);' id='15'  src='imgs/stamin_up.png'       alt='Stamin-Up'>
-          <img class='perk gray' onclick='player(this);' id='4'  src='imgs/whos_who.png'        alt='Whos Who'>
-          <img class='perk gray' onclick='player(this);' id='14' src='imgs/tombstone.png'       alt='Tombstone'>
-          <img class='perk gray' onclick='player(this);' id='0' src='imgs/vulture_aid.png'     alt='Vulture Aid Elixir'>
-          <img class='perk gray' onclick='player(this);' id='0' src='imgs/electric_cherry.png' alt='Electric Cherry'>
-          <img class='perk gray' onclick='player(this);' id='99' src='imgs/pack_a_punch.png'    alt='Pack A Punch'>
-          <audio id='music-5'>  type='audio/mpeg' <source src='songs/deadshot.mp3'></audio>
-          <audio id='music-13'>  type='audio/mpeg' <source src='songs/double_tap.mp3'></audio>
-          <audio id='music-16'>  type='audio/mpeg' <source src='songs/phd_flooper.mp3'></audio>
-          <audio id='music-6'>  type='audio/mpeg' <source src='songs/juggernaut.mp3'></audio>
-          <audio id='music-11'>  type='audio/mpeg' <source src='songs/mule_kick.mp3'></audio>
-          <audio id='music-10'>  type='audio/mpeg' <source src='songs/quick_revive.mp3'></audio>
-          <audio id='music-1'>  type='audio/mpeg' <source src='songs/sleight_of_hand.mp3'></audio>
-          <audio id='music-15'>  type='audio/mpeg' <source src='songs/stamin_up.mp3'></audio>
-          <audio id='music-4'>  type='audio/mpeg' <source src='songs/whos_who.mp3'></audio>
-          <audio id='music-14'>  type='audio/mpeg' <source src='songs/tombstone.mp3'></audio>
-          <audio id='music-0'> type='audio/mpeg' <source src='songs/vulture_aid.mp3'></audio>
-          <audio id='music-0'> type='audio/mpeg' <source src='songs/electric_cherry.mp3'></audio>
-          <audio id='music-99'> type='audio/mpeg' <source src='songs/pack_a_punch.mp3'></audio>
+          <img class='perk gray' onclick='player(this);' id='8'  src='imgs/deadshot.png'        alt='deadshot_daiquiri' title='Deadshot Daiquiri'>
+          <img class='perk gray' onclick='player(this);' id='10' src='imgs/double_tap.png'      alt='double_tap'        title='Double Tap Root Beer'>
+          <img class='perk gray' onclick='player(this);' id='12' src='imgs/phd_flooper.png'     alt='phd_flooper'       title='PhD Flooper'>
+          <img class='perk gray' onclick='player(this);' id='16' src='imgs/juggernaut.png'      alt='juggernaut'        title='Juggernaut'>
+          <img class='perk gray' onclick='player(this);' id='18' src='imgs/mule_kick.png'       alt='mule_kick'         title='Mule Kick'>
+          <img class='perk gray' onclick='player(this);' id='22' src='imgs/quick_revive.png'    alt='quick_revive'      title='Quick Revive'>
+          <img class='perk gray' onclick='player(this);' id='24' src='imgs/sleight_of_hand.png' alt='sleight_of_hand'   title='Sleight Of Hand'>
+          <img class='perk gray' onclick='player(this);' id='26' src='imgs/stamin_up.png'       alt='stamin_up'         title='Stamin-Up'>
+          <img class='perk gray' onclick='player(this);' id='23' src='imgs/whos_who.png'        alt='whos_who'          title='Whos Who'>
+          <img class='perk gray' onclick='player(this);' id='21' src='imgs/tombstone.png'       alt='tombstone'         title='Tombstone'>
+          <img class='perk gray' onclick='player(this);' id='19' src='imgs/vulture_aid.png'     alt='vulture_aid'       title='Vulture Aid Elixir'>
+          <img class='perk gray' onclick='player(this);' id='15' src='imgs/electric_cherry.png' alt='electric_cherry'   title='Electric Cherry'>
+          <img class='perk gray' onclick='player(this);' id='12' src='imgs/pack_a_punch.png'    alt='pack_a_punch'      title='Pack A Punch'>
+          <audio id='deadshot_daiquiri'>  type='audio/mpeg' <source src='songs/deadshot.mp3'></audio>
+          <audio id='double_tap'>         type='audio/mpeg' <source src='songs/double_tap.mp3'></audio>
+          <audio id='phd_flooper'>        type='audio/mpeg' <source src='songs/phd_flooper.mp3'></audio>
+          <audio id='juggernaut'>         type='audio/mpeg' <source src='songs/juggernaut.mp3'></audio>
+          <audio id='mule_kick'>          type='audio/mpeg' <source src='songs/mule_kick.mp3'></audio>
+          <audio id='quick_revive'>       type='audio/mpeg' <source src='songs/quick_revive.mp3'></audio>
+          <audio id='sleight_of_hand'>    type='audio/mpeg' <source src='songs/sleight_of_hand.mp3'></audio>
+          <audio id='stamin_up'>          type='audio/mpeg' <source src='songs/stamin_up.mp3'></audio>
+          <audio id='whos_who'>           type='audio/mpeg' <source src='songs/whos_who.mp3'></audio>
+          <audio id='tombstone'>          type='audio/mpeg' <source src='songs/tombstone.mp3'></audio>
+          <audio id='vulture_aid'>        type='audio/mpeg' <source src='songs/vulture_aid.mp3'></audio>
+          <audio id='electric_cherry'>    type='audio/mpeg' <source src='songs/electric_cherry.mp3'></audio>
+          <audio id='pack_a_punch'>       type='audio/mpeg' <source src='songs/pack_a_punch.mp3'></audio>
         </form>
     </body>
 </html>
