@@ -4,7 +4,7 @@
 # Created by Felipe Nogaroto Gonzalez
 # License: MIT
 
-# Verificar se o comando gpio existe
+# Verify the gpio command
 no_gpio(){
 echo -e "Content-Type: text/html\r\n
 <html>
@@ -21,16 +21,17 @@ echo -e "Content-Type: text/html\r\n
 
 GPIO=$(which gpio 2>/dev/null)
 
+# Nao esta funcionando
 #if [ -z $GPIO ]; then
 #  no_gpio
 #fi
 
 
-# Inicializa todos os pinos como OUT e como 0
-#for pin in $(seq 0 26); do
-#    gpio -1 mode $pin out 1>/dev/null 2>/dev/null
-#    gpio -1 write $pin 0 1>/dev/null 2>/dev/null
-# done
+# Setup all pins, mode OUT and LOW
+for i in $(seq 0 26); do
+   gpio -1 mode $i out 1>/dev/null 2>/dev/null
+   gpio -1 write $i 0  1>/dev/null 2>/dev/null
+done
 
 echo -e 'Content-Type: text/html\r\n'
 
@@ -39,12 +40,13 @@ PIN="${QUERY_STRING/=*}"
 VALUE="${QUERY_STRING/*=}"
 
 if [ $VALUE == 0 -o $VALUE == 1 ]; then
-   echo "gpio -1 write $PIN $VALUE" >> teste.log
-#   gpio -1 write $PIN $VALUE
-elif [ $VALUE == 99]; then
-  for pin in $(seq 0 26); do
-      gpio -1 write $pin 1 1>/dev/null 2>/dev/null
-  done
+   echo "gpio -1 write $PIN $VALUE"
+   gpio -1 write $PIN $VALUE
+   if [ $PIN == 99 ]; then
+      for i in $(seq 0 26); do
+         gpio -1 write $i $VALUE 1>/dev/null 2>/dev/null
+      done
+   fi
 fi
 
 echo "
