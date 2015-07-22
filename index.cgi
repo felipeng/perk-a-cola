@@ -40,7 +40,11 @@ VALUE="${QUERY_STRING/*=}"
 
 if [ $VALUE == 0 -o $VALUE == 1 ]; then
    echo "gpio -1 write $PIN $VALUE" >> teste.log
-#   gpio write $PIN $VALUE
+#   gpio -1 write $PIN $VALUE
+elif [ $VALUE == 99]; then
+  for pin in $(seq 0 26); do
+      gpio -1 write $pin 1 1>/dev/null 2>/dev/null
+  done
 fi
 
 echo "
@@ -97,7 +101,7 @@ echo "
           <img class='perk gray' onclick='player(this);' id='21' src='imgs/tombstone.png'       alt='tombstone'         title='Tombstone'>
           <img class='perk gray' onclick='player(this);' id='19' src='imgs/vulture_aid.png'     alt='vulture_aid'       title='Vulture Aid Elixir'>
           <img class='perk gray' onclick='player(this);' id='15' src='imgs/electric_cherry.png' alt='electric_cherry'   title='Electric Cherry'>
-          <img class='perk gray' onclick='player(this);' id='12' src='imgs/pack_a_punch.png'    alt='pack_a_punch'      title='Pack A Punch'>
+          <img class='perk gray' onclick='player(this);' id='99' src='imgs/pack_a_punch.png'    alt='pack_a_punch'      title='Pack A Punch'>
           <audio id='deadshot_daiquiri'>  type='audio/mpeg' <source src='songs/deadshot.mp3'></audio>
           <audio id='double_tap'>         type='audio/mpeg' <source src='songs/double_tap.mp3'></audio>
           <audio id='phd_flooper'>        type='audio/mpeg' <source src='songs/phd_flooper.mp3'></audio>
