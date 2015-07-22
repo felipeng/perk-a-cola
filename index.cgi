@@ -49,6 +49,9 @@ if [ $VALUE == 0 -o $VALUE == 1 ]; then
    fi
 fi
 
+# Read pinmap
+source pinmap.conf
+
 echo "
 <html>
   <head>
@@ -91,18 +94,18 @@ echo "
     <body>
         <form action='index.cgi' method='get'>
           <img src='imgs/cod_zombies.png'>
-          <img class='perk gray' onclick='player(this);' id='8'  src='imgs/deadshot.png'        alt='deadshot_daiquiri' title='Deadshot Daiquiri'>
-          <img class='perk gray' onclick='player(this);' id='10' src='imgs/double_tap.png'      alt='double_tap'        title='Double Tap Root Beer'>
-          <img class='perk gray' onclick='player(this);' id='12' src='imgs/phd_flooper.png'     alt='phd_flooper'       title='PhD Flooper'>
-          <img class='perk gray' onclick='player(this);' id='16' src='imgs/juggernaut.png'      alt='juggernaut'        title='Juggernaut'>
-          <img class='perk gray' onclick='player(this);' id='18' src='imgs/mule_kick.png'       alt='mule_kick'         title='Mule Kick'>
-          <img class='perk gray' onclick='player(this);' id='22' src='imgs/quick_revive.png'    alt='quick_revive'      title='Quick Revive'>
-          <img class='perk gray' onclick='player(this);' id='24' src='imgs/sleight_of_hand.png' alt='sleight_of_hand'   title='Sleight Of Hand'>
-          <img class='perk gray' onclick='player(this);' id='26' src='imgs/stamin_up.png'       alt='stamin_up'         title='Stamin-Up'>
-          <img class='perk gray' onclick='player(this);' id='23' src='imgs/whos_who.png'        alt='whos_who'          title='Whos Who'>
-          <img class='perk gray' onclick='player(this);' id='21' src='imgs/tombstone.png'       alt='tombstone'         title='Tombstone'>
-          <img class='perk gray' onclick='player(this);' id='19' src='imgs/vulture_aid.png'     alt='vulture_aid'       title='Vulture Aid Elixir'>
-          <img class='perk gray' onclick='player(this);' id='15' src='imgs/electric_cherry.png' alt='electric_cherry'   title='Electric Cherry'>
+          <img class='perk gray' onclick='player(this);' id='$deadshot'  src='imgs/deadshot.png'        alt='deadshot_daiquiri' title='Deadshot Daiquiri'>
+          <img class='perk gray' onclick='player(this);' id='$double_tap' src='imgs/double_tap.png'      alt='double_tap'        title='Double Tap Root Beer'>
+          <img class='perk gray' onclick='player(this);' id='$phd_flooper' src='imgs/phd_flooper.png'     alt='phd_flooper'       title='PhD Flooper'>
+          <img class='perk gray' onclick='player(this);' id='$juggernaut' src='imgs/juggernaut.png'      alt='juggernaut'        title='Juggernaut'>
+          <img class='perk gray' onclick='player(this);' id='$mule_kick' src='imgs/mule_kick.png'       alt='mule_kick'         title='Mule Kick'>
+          <img class='perk gray' onclick='player(this);' id='$quick_revive' src='imgs/quick_revive.png'    alt='quick_revive'      title='Quick Revive'>
+          <img class='perk gray' onclick='player(this);' id='$sleight_of_hand' src='imgs/sleight_of_hand.png' alt='sleight_of_hand'   title='Sleight Of Hand'>
+          <img class='perk gray' onclick='player(this);' id='$stamin_up' src='imgs/stamin_up.png'       alt='stamin_up'         title='Stamin-Up'>
+          <img class='perk gray' onclick='player(this);' id='$whos_who' src='imgs/whos_who.png'        alt='whos_who'          title='Whos Who'>
+          <img class='perk gray' onclick='player(this);' id='$tombstone' src='imgs/tombstone.png'       alt='tombstone'         title='Tombstone'>
+          <img class='perk gray' onclick='player(this);' id='$vulture_aid' src='imgs/vulture_aid.png'     alt='vulture_aid'       title='Vulture Aid Elixir'>
+          <img class='perk gray' onclick='player(this);' id='$electric_cherry' src='imgs/electric_cherry.png' alt='electric_cherry'   title='Electric Cherry'>
           <img class='perk gray' onclick='player(this);' id='99' src='imgs/pack_a_punch.png'    alt='pack_a_punch'      title='Pack A Punch'>
           <audio id='deadshot_daiquiri'>  type='audio/mpeg' <source src='songs/deadshot.mp3'></audio>
           <audio id='double_tap'>         type='audio/mpeg' <source src='songs/double_tap.mp3'></audio>
