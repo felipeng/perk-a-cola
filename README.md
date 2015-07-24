@@ -4,6 +4,8 @@
 can be found in zombies maps of Call Of Duty game. Each drink gives the player
 a perk to help them survive and fend off the zombie hordes.
 
+![Perk-A-Cola](http://felipeng.net/blog/wp-content/uploads/2015/07/perk-a-cola-title.jpg)
+
 More info about this project: [Real Perk-A-Cola Bottles](http://felipeng.net/blog/projetos/real-perk-a-cola-bottles)
 
 ## About
